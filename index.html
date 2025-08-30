@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinematics Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    code, .formula {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .example {
+      background: #eef7ff;
+      border-left: 4px solid #3498db;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kinematics (운동학) Summary Notes</h1>
+  </header>
+
+  <section>
+    <h2>Definition</h2>
+    <p><strong>Kinematics</strong>: The study of motion itself, without considering the forces that cause it.<br>
+    <strong>운동학</strong>: 힘의 원인을 고려하지 않고 물체의 움직임 자체를 분석하는 학문.</p>
+  </section>
+
+  <section>
+    <h2>Vectors & Scalars</h2>
+    <ul>
+      <li><strong>Vector (벡터)</strong>: Defined by both magnitude and direction. Requires geometric or component-based operations.</li>
+      <li><strong>Scalar (스칼라)</strong>: Defined only by magnitude. Follows ordinary arithmetic rules.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic Quantities</h2>
+    <ul>
+      <li><strong>Position (위치)</strong>: Location relative to a reference point.</li>
+      <li><strong>Distance (거리)</strong>: Total path length traveled.</li>
+      <li><strong>Displacement (변위)</strong>: Straight-line distance from start to end point (vector quantity).</li>
+      <li><strong>Speed (속력)</strong>: Distance traveled per unit time (scalar).</li>
+      <li><strong>Velocity (속도)</strong>: Displacement per unit time including direction (vector).</li>
+      <li><strong>Acceleration (가속도)</strong>: Rate of change of velocity. Zero acceleration means uniform motion.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kinematic Equations (등가속도 운동 방정식)</h2>
+    <p>For motion under constant acceleration <em>a</em>:</p>
+    <ul>
+      <li>\( v = v_0 + at \)</li>
+      <li>\( \Delta x = v_0 t + \tfrac{1}{2} a t^2 \)</li>
+      <li>\( v^2 = v_0^2 + 2a \Delta x \)</li>
+      <li>\( \Delta x = \tfrac{1}{2}(v_0 + v) t \)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Vector Addition (합성 벡터)</h2>
+    <p>Two or more vectors can be combined into a single resultant vector.</p>
+    <div class="example">
+      <p><strong>Example:</strong> A 5 N force acts east, and a 12 N force acts south. The resultant vector is:</p>
+      <p>Magnitude: \( R = \sqrt{5^2 + 12^2} = 13\,N \)</p>
+      <p>Direction: \( \theta = \arctan(12/5) \approx 67^\circ \) south of east.</p>
+    </div>
+  </section>
+
+</body>
+</html>
