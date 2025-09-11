@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Physics 3 — Circular Motion & Gravitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg:#f8f9fa; --fg:#222; --card:#fff; --muted:#6b7280; --brand:#2c3e50; --accent:#3498db; --border:#e6e9ef;
+      --note:#fff8e1; --note-b:#ffe69c; --info:#eef7ff; --info-b:#d6e8fb;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;line-height:1.7;color:var(--fg);background:var(--bg)}
+    header{background:var(--brand);color:#fff;text-align:center;padding:1.6rem 1rem}
+    header h1{margin:0 0 .25rem;font-size:1.6rem}
+    header p{margin:0;opacity:.9}
+    main{max-width:1100px;margin:2rem auto;padding:0 1rem}
+    section{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.06);padding:1.5rem;margin-bottom:1.25rem}
+    h2{margin:0 0 1rem;color:var(--brand);border-bottom:2px solid #f0f2f5;padding-bottom:.45rem;font-size:1.25rem}
+    h3{margin:1rem 0 .4rem;color:#34495e}
+    h4{margin:.7rem 0 .2rem;color:#3b4b63}
+    p code, li code{background:#f6f8fb;border:1px solid var(--border);border-radius:6px;padding:.1rem .35rem}
+    pre{background:#f6f8fb;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;overflow:auto}
+    .note{background:var(--note);border:1px solid var(--note-b);border-left:4px solid #ffcc00;padding:.8rem 1rem;border-radius:10px}
+    .info{background:var(--info);border:1px solid var(--info-b);border-left:4px solid var(--accent);padding:.8rem 1rem;border-radius:10px}
+    .grid{display:grid;gap:1rem}
+    .meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .Link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-left: 50%;
+      
+    }
+    @media(min-width:920px){ .two{grid-template-columns:1fr 1fr} .three{grid-template-columns:1fr 1fr 1fr} }
+    .kvs{display:grid;grid-template-columns:200px 1fr;gap:.4rem .75rem}
+    ul{margin:.35rem 0 .25rem 1.1rem} li{margin:.25rem 0}
+    table{border-collapse:collapse;width:100%;margin:.5rem 0}
+    th,td{border:1px solid var(--border);padding:.55rem .6rem;text-align:center}
+    th{background:#f6f7f9}
+    .tag{display:inline-block;background:#eef7ff;border:1px solid #d6e8fb;color:#1a64a6;border-radius:6px;padding:.1rem .45rem;font-size:.85rem}
+    .example-title{font-weight:700;color:#2b3b56}
+    .sep{height:1px;background:#f0f2f5;margin:1rem 0}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Physics 3 — Circular Motion & Gravitation</h1>
+    <p>Uniform & non-uniform circular motion, banked curves, vertical loops, Newtonian gravity, orbits, energy</p>
+  </header>
+
+  <!-- 1. Uniform Circular Motion -->
+  <section>
+     <p class="meta">Posted on 2025.08.30</p>
+    <h2>1) Uniform Circular Motion (UCM)</h2>
+    <h3>Definition & kinematics</h3>
+    <ul>
+      <li>Object moves in a circle of radius \(R\) at constant <em>speed</em> \(v\). Direction of <em>velocity</em> changes continuously \(\Rightarrow\) the motion is accelerated.</li>
+      <li>Angular quantities: \(\omega=\dfrac{d\theta}{dt}\) (rad/s), period \(T=\dfrac{2\pi}{\omega}\), frequency \(f=\dfrac{1}{T}=\dfrac{\omega}{2\pi}\).</li>
+      <li>Linear–angular links: \(\displaystyle v=\omega R,\quad a_c=\dfrac{v^2}{R}=\omega^2 R.\)</li>
+    </ul>
+    <div class="info">
+      <strong>Centripetal acceleration:</strong> always points toward the center. It changes <em>direction</em> of \(\vec v\) but not its magnitude in UCM.
+    </div>
+
+    <h3>Centripetal force</h3>
+    <p>By Newton’s 2nd law, the required inward net force is
+      \[
+        F_c = m a_c = m\,\frac{v^2}{R}=m\,\omega^2 R.
+      \]
+      “Centripetal force” is not a new kind of force; it is the <em>role</em> played by tension, normal force, gravity, friction, etc., as needed to bend the trajectory.
+    </p>
+    <div class="note">
+      If the inward force drops to zero, the object leaves the circle along the instantaneous <strong>tangent</strong> (Newton’s 1st law).
+    </div>
+  </section>
+
+  <!-- 2. Beyond UCM: tangential + radial -->
+  <section>
+    <h2>2) Non-Uniform Circular Motion</h2>
+    <p>When speed changes, acceleration has two components:</p>
+    <ul>
+      <li><strong>Tangential</strong>: \(a_t=\dfrac{dv}{dt}\) (changes speed).</li>
+      <li><strong>Radial/centripetal</strong>: \(a_c=\dfrac{v^2}{R}\) (changes direction).</li>
+    </ul>
+    <p>Total acceleration: \(\displaystyle \vec a = \vec a_t + \vec a_c\) with magnitude \(\sqrt{a_t^2+a_c^2}\).</p>
+  </section>
+
+  <!-- 3. Applications of centripetal force -->
+  <section>
+    <h2>3) Classic Applications</h2>
+
+    <h3>3.1 Level (unbanked) curve — friction provides centripetal force</h3>
+    <p>Max safe speed (no slipping) on a flat turn of radius \(R\):</p>
+    <p>\[
+      f_s^{\max} = \mu_s N = \mu_s m g \quad \Rightarrow \quad \frac{m v_{\max}^2}{R} \le \mu_s m g
+      \quad \Rightarrow \quad v_{\max} = \sqrt{\mu_s g R}.
+    \]</p>
+
+    <h3>3.2 Banked curve (idealized, no friction)</h3>
+    <p>For bank angle \(\theta\), normal force supplies the needed horizontal component:</p>
+    <p>\[
+      \tan\theta = \frac{v^2}{gR} \quad \Rightarrow \quad v = \sqrt{g R \tan\theta}.
+    \]</p>
+    <div class="info">With friction, the usable range of \(v\) widens; direction of friction (up or down the slope) depends on whether \(v\) is below or above the ideal \( \sqrt{gR\tan\theta}\).</div>
+
+    <h3>3.3 Conical pendulum</h3>
+    <p>Mass \(m\) moves in a horizontal circle of radius \(R\), string makes angle \(\theta\) with vertical, tension \(T\):</p>
+    <p>\[
+      T\cos\theta = mg,\qquad T\sin\theta = \frac{m v^2}{R}
+      \quad \Rightarrow \quad \tan\theta = \frac{v^2}{gR}.
+    \]</p>
+
+    <h3>3.4 Vertical circle (loop)</h3>
+    <ul>
+      <li><strong>Top of loop (track contact):</strong> \(N_{\text{top}} + mg = \dfrac{m v_{\text{top}}^2}{R}\). For just maintaining contact: \(N_{\text{top}}=0 \Rightarrow v_{\text{top}} \ge \sqrt{gR}\).</li>
+      <li><strong>Bottom:</strong> \(N_{\text{bot}} - mg = \dfrac{m v_{\text{bot}}^2}{R}\) \(\Rightarrow N_{\text{bot}} = mg + \dfrac{m v_{\text{bot}}^2}{R}\) (largest normal force).</li>
+    </ul>
+    <div class="note">Apparent weight equals the normal force. It can be smaller (even zero) at the top and larger at the bottom than the true weight \(mg\).</div>
+  </section>
+
+  <!-- 4. Newtonian Gravitation -->
+  <section>
+    <h2>4) Newton’s Law of Universal Gravitation</h2>
+    <h3>Law</h3>
+    <p>
+      \[
+        F_g = G \frac{m_1 m_2}{r^2}, \qquad G \approx 6.674\times 10^{-11}\ \text{N·m}^2\!/\text{kg}^2.
+      \]
+      Force is attractive and acts along the line joining the two masses (action–reaction pair has equal magnitude).
+    </p>
+
+    <h3>Gravitational field and local \(g\)</h3>
+    <p>Gravitational field of mass \(M\) at distance \(r\): \(\displaystyle g(r) = \frac{GM}{r^2}\) (points toward \(M\)). Near Earth’s surface,
+      \[
+        g \approx \frac{G M_{\oplus}}{R_{\oplus}^2}.
+      \]
+      \(g\) decreases with altitude; it is not strictly constant.
+    </p>
+
+    <h3>Potential energy (two-body)</h3>
+    <p>
+      \[
+        U(r) = -\,\frac{G M m}{r} \quad (\text{choose }U\to 0\text{ as }r\to\infty).
+      \]
+      More negative \(U\) means a more tightly bound system. Work by gravity from \(r_1\) to \(r_2\) equals \(\Delta K = -\Delta U\).
+    </p>
+  </section>
+
+  <!-- 5. Circular Orbits & Kepler -->
+  <section>
+    <h2>5) Orbits: Circular Speed, Period, Energy</h2>
+    <h3>Gravity as centripetal force</h3>
+    <p>For a small mass \(m\) orbiting a large mass \(M\) (e.g., satellite–Earth), set gravity equal to required centripetal force:</p>
+    <p>\[
+      \frac{G M m}{r^2} = \frac{m v^2}{r} \quad \Rightarrow \quad v_{\text{orbit}} = \sqrt{\frac{G M}{r}}.
+    \]</p>
+    <p>Orbital period:
+      \[
+        T = \frac{2\pi r}{v} = 2\pi \sqrt{\frac{r^3}{G M}},
+      \]
+      which is Kepler’s 3rd law for circular orbits.
+    </p>
+
+    <h3>Mechanical energy in a circular orbit</h3>
+    <p>Total energy \(E=K+U\):
+      \[
+        K = \frac{1}{2} m v^2 = \frac{G M m}{2r}, \qquad U = -\frac{G M m}{r}, \qquad E = -\frac{G M m}{2r}.
+      \]
+      Bound circular orbits have negative total energy; tighter orbits (smaller \(r\)) are <em>more negative</em>.
+    </p>
+
+    <h3>Escape speed</h3>
+    <p>Minimum speed (ignoring atmosphere/rotation) to reach \(r\to\infty\) with zero final speed:</p>
+    <p>\[
+      v_{\text{esc}} = \sqrt{\frac{2 G M}{r}} = \sqrt{2}\,v_{\text{orbit}}.
+    </p>
+
+    <div class="info">
+      <strong>Common orbits:</strong>
+      <ul>
+        <li><span class="tag">LEO</span> (Low Earth Orbit): \(r \approx 1.05\,R_\oplus\) to \(2\,R_\oplus\); \(T \sim 90\) minutes.</li>
+        <li><span class="tag">GEO</span> (Geostationary): \(T=1\) sidereal day; \(r \approx 42{,}164\) km from Earth’s center (\(\sim 35{,}786\) km altitude).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Worked Examples -->
+  <section>
+    <h2>6) Worked Examples</h2>
+
+    <h3>Example 1 — Banked turn</h3>
+    <p class="example-title">What bank angle \(\theta\) allows a car to take a curve of radius \(R=50\,\text{m}\) at \(v=18\,\text{m/s}\) with no friction?</p>
+    <p>Use \(\tan\theta=\dfrac{v^2}{gR}\Rightarrow \theta=\arctan\!\left(\dfrac{18^2}{9.8\times 50}\right)\approx \arctan(0.662)\approx 33.5^\circ.\)</p>
+
+    <h3>Example 2 — Minimum loop speed at the top</h3>
+    <p class="example-title">A bead of mass \(m\) slides frictionlessly on a loop of radius \(R=1.2\,\text{m}\). What minimum speed at the top prevents losing contact?</p>
+    <p>Set \(N_{\text{top}}=0\Rightarrow v_{\text{top}}=\sqrt{gR}=\sqrt{9.8\times 1.2}\approx 3.43\,\text{m/s}.\)</p>
+
+    <h3>Example 3 — Satellite circular speed</h3>
+    <p class="example-title">Find \(v\) for a satellite in a circular orbit \(300\,\text{km}\) above Earth’s surface.</p>
+    <p>Use \(r=R_\oplus+300\,\text{km}\), \(v=\sqrt{\dfrac{GM_\oplus}{r}}\). With \(R_\oplus\approx 6.371\times 10^6\,\text{m}\), \(GM_\oplus\approx 3.986\times10^{14}\,\text{m}^3/\text{s}^2\),  
+      \(r\approx 6.671\times 10^6\,\text{m}\Rightarrow v\approx 7.73\,\text{km/s}.\)
+    </p>
+  </section>
+
+  <!-- 7. Problem-Solving Strategy -->
+  <section>
+    <h2>7) Problem-Solving Strategy</h2>
+    <ol>
+      <li><strong>Diagram:</strong> Draw the path, choose a coordinate frame (radial ↔ tangential), and mark knowns/unknowns.</li>
+      <li><strong>Free-body diagram:</strong> Identify forces. Decide which component supplies centripetal role (toward center).</li>
+      <li><strong>Kinematics:</strong> For UCM, use \(v=\omega R\), \(a_c=v^2/R\). For non-UCM, include \(a_t\).</li>
+      <li><strong>Dynamics:</strong> Apply \(\sum F_r = m v^2/R\) (radial) and \(\sum F_t = m a_t\) (tangential).</li>
+      <li><strong>Energy (when helpful):</strong> Use \(K,\,U=-GMm/r\), conservation if no non-conservative work.</li>
+      <li><strong>Check units & limits:</strong> Ensure answers behave sensibly as \(R\to\infty\), \(v\to 0\), etc.</li>
+    </ol>
+  </section>
+
+  <!-- 8. Quick Reference -->
+  <section>
+    <h2>8) Quick Reference (Formulas)</h2>
+    <div class="grid three">
+      <div>
+        <h4>Circular kinematics</h4>
+        <ul>
+          <li>\(v=\omega R\)</li>
+          <li>\(a_c=\dfrac{v^2}{R}=\omega^2 R\)</li>
+          <li>\(T=\dfrac{2\pi}{\omega},\; f=\dfrac{1}{T}\)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Forces & curves</h4>
+        <ul>
+          <li>\(F_c=m \dfrac{v^2}{R}\)</li>
+          <li>Flat turn: \(v_{\max}=\sqrt{\mu_s g R}\)</li>
+          <li>Banked (no friction): \(v=\sqrt{gR\tan\theta}\)</li>
+          <li>Vertical loop (top contact): \(v_{\text{top}}\ge\sqrt{gR}\)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gravitation & orbits</h4>
+        <ul>
+          <li>\(F_g=G\dfrac{Mm}{r^2}\)</li>
+          <li>\(g(r)=\dfrac{GM}{r^2}\)</li>
+          <li>\(U(r)=-\dfrac{GMm}{r}\)</li>
+          <li>\(v_{\text{orbit}}=\sqrt{\dfrac{GM}{r}}\)</li>
+          <li>\(T=2\pi\sqrt{\dfrac{r^3}{GM}}\)</li>
+          <li>\(v_{\text{esc}}=\sqrt{\dfrac{2GM}{r}}\)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Common Pitfalls -->
+  <section>
+    <h2>9) Common Pitfalls</h2>
+    <ul>
+      <li>Confusing “centripetal force” with a new force type — it’s the <em>net inward force</em>, often composed of familiar forces.</li>
+      <li>For vertical circles, forgetting that normal force can drop to zero at the top; use contact condition \(N\ge 0\).</li>
+      <li>Using \(g=9.8\,\text{m/s}^2\) at high altitude. Use \(g(r)=GM/r^2\) for orbital problems.</li>
+      <li>Mixing up speed \(v\) with angular speed \(\omega\): check \(v=\omega R\).</li>
+      <li>For friction problems, ensuring you use <em>static</em> friction limit for non-slip circular motion on a flat road.</li>
+    </ul>
+  </section>
+   <a href="https://e2yeong.github.io/Physics-Note/Physics2/"><p class="Link">Back</p></a>
+  <a href="https://e2yeong.github.io/Physics-Note/Physics2/Physics3"><p class="Link">Next</p></a>
+</body>
+</html>
