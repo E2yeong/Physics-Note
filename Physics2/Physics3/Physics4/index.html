@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Work, Energy, and Power — Comprehensive Study Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root{
+      --bg:#f8f9fa; --fg:#222; --card:#fff; --muted:#6b7280; --brand:#2c3e50; --accent:#1d6fdc; --border:#e6e9ef;
+      --note:#fff8e1; --note-b:#ffe69c; --info:#eef7ff; --info-b:#d6e8fb; --ok:#e8f7ef; --ok-b:#bfe9d1;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;line-height:1.7;color:var(--fg);background:var(--bg)}
+    header{background:var(--brand);color:#fff;text-align:center;padding:1.6rem 1rem}
+    header h1{margin:0 0 .25rem;font-size:1.65rem}
+    header p{margin:0;opacity:.9}
+    main{max-width:1100px;margin:2rem auto;padding:0 1rem}
+    nav.toc{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.06);padding:1.2rem;margin-bottom:1.25rem}
+    nav.toc a{color:var(--accent);text-decoration:none}
+    nav.toc a:hover{text-decoration:underline}
+    section{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.06);padding:1.5rem;margin-bottom:1.25rem}
+    h2{margin:0 0 1rem;color:var(--brand);border-bottom:2px solid #f0f2f5;padding-bottom:.45rem;font-size:1.25rem}
+    h3{margin:1rem 0 .4rem;color:#34495e}
+    h4{margin:.7rem 0 .2rem;color:#3b4b63}
+    p code, li code{background:#f6f8fb;border:1px solid var(--border);border-radius:6px;padding:.1rem .35rem}
+    pre{background:#f6f8fb;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;overflow:auto}
+    .note{background:var(--note);border:1px solid var(--note-b);border-left:4px solid #ffcc00;padding:.8rem 1rem;border-radius:10px}
+    .info{background:var(--info);border:1px solid var(--info-b);border-left:4px solid var(--accent);padding:.8rem 1rem;border-radius:10px}
+    .ok{background:var(--ok);border:1px solid var(--ok-b);border-left:4px solid #29a36a;padding:.8rem 1rem;border-radius:10px}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:940px){ .two{grid-template-columns:1fr 1fr} }
+    ul{margin:.35rem 0 .25rem 1.1rem} li{margin:.25rem 0}
+    .sep{height:1px;background:#f0f2f5;margin:1rem 0}
+    .meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .Link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-left: 50%;
+      
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Work, Energy, and Power</h1>
+    <p>Definitions · Types of Energy · Conservation Laws · Work–Energy Theorem · Power · Applications & Tips</p>
+  </header>
+
+  <main>
+    <nav class="toc">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#work">1) Work</a></li>
+        <li><a href="#energy">2) Types of Energy</a></li>
+        <li><a href="#conservation">3) Energy Conservation & Work–Energy Theorem</a></li>
+        <li><a href="#power">4) Power</a></li>
+        <li><a href="#applications">5) Applications & Key Exam Concepts</a></li>
+      </ol>
+    </nav>
+
+    <section id="work">
+      <h2>1) Work</h2>
+      <p class="meta">Posted on 2025.09.18</p>
+      <p><strong>Definition:</strong> When a force acts on an object and displaces it by distance \(d\) in the direction of the force, the work done is:</p>
+      <p>\[ W = F \cdot d \cdot \cos \theta \]</p>
+      <ul>
+        <li>\(F\): magnitude of the applied force</li>
+        <li>\(d\): displacement of the object</li>
+        <li>\(\theta\): angle between force and displacement</li>
+      </ul>
+      <h3>Characteristics</h3>
+      <ul>
+        <li><strong>Positive Work:</strong> force and displacement in same direction → energy increases.</li>
+        <li><strong>Negative Work:</strong> force opposes displacement → energy decreases (e.g., friction).</li>
+        <li><strong>Zero Work:</strong> force ⟂ displacement (\(\cos 90^\circ = 0\)). Example: centripetal force in uniform circular motion.</li>
+      </ul>
+      <h3>Examples</h3>
+      <ul>
+        <li>Pushing a box horizontally: \(W = Fd\).</li>
+        <li>Uniform circular motion: centripetal force does zero work.</li>
+      </ul>
+    </section>
+
+    <section id="energy">
+      <h2>2) Types of Energy</h2>
+      <div class="grid two">
+        <div>
+          <h3>2.1 Kinetic Energy (KE)</h3>
+          <p>\[ KE = \tfrac{1}{2}mv^2 \]</p>
+          <p>Energy of motion. Doubling velocity → quadruples kinetic energy.</p>
+        </div>
+        <div>
+          <h3>2.2 Potential Energy (PE)</h3>
+          <ul>
+            <li><strong>Gravitational:</strong> \( PE_g = mgh \)</li>
+            <li><strong>Elastic:</strong> \( PE_s = \tfrac{1}{2}kx^2 \) <br>
+              where \(k\) = spring constant, \(x\) = extension/compression.</li>
+          </ul>
+          <p>Stored energy associated with conservative forces (gravity, springs).</p>
+        </div>
+      </div>
+      <h3>2.3 Mechanical Energy</h3>
+      <p>\[ E_{mech} = KE + PE \]</p>
+      <p>Total of kinetic and potential energies. Conserved when only conservative forces act.</p>
+    </section>
+
+    <section id="conservation">
+      <h2>3) Energy Conservation & Work–Energy Theorem</h2>
+      <h3>3.1 Conservation of Mechanical Energy</h3>
+      <p>If no non-conservative forces act:</p>
+      <p>\[ E_{mech,initial} = E_{mech,final} \]</p>
+      <p>Example: In free fall, loss of \(PE_g\) = gain in \(KE\).</p>
+      <h3>3.2 Work–Energy Theorem</h3>
+      <p>The net work done by all forces equals the change in kinetic energy:</p>
+      <p>\[ W_{net} = \Delta KE \]</p>
+      <p>With non-conservative forces:</p>
+      <p>\[ \Delta E_{mech} = W_{nc} \]</p>
+      <div class="info">
+        <p>Conservative forces only change the <em>form</em> of energy (KE ↔ PE). Non-conservative forces (friction, drag) reduce total mechanical energy.</p>
+      </div>
+    </section>
+
+    <section id="power">
+      <h2>4) Power</h2>
+      <p><strong>Definition:</strong> The rate of doing work or transferring energy.</p>
+      <ul>
+        <li><strong>Average Power:</strong> \[ P = \frac{W}{t} \]</li>
+        <li><strong>Instantaneous Power:</strong> \[ P = F \cdot v \cdot \cos \theta \]</li>
+      </ul>
+      <p><strong>Unit:</strong> Watt (W), where \(1 \text{ W} = 1 \text{ J/s}\).</p>
+      <h3>Examples</h3>
+      <ul>
+        <li>Elevator lifting mass \(m\) at speed \(v\): \(P = mgv\).</li>
+        <li>A 60 W bulb converts 60 J of energy every second into light and heat.</li>
+      </ul>
+    </section>
+
+    <section id="applications">
+      <h2>5) Applications & Key Exam Concepts</h2>
+      <ul>
+        <li><strong>Sign of Work:</strong> Determined by angle between force and displacement.</li>
+        <li><strong>Conservative vs Non-conservative:</strong>
+          <ul>
+            <li>Conservative (gravity, springs): path independent, energy conserved.</li>
+            <li>Non-conservative (friction, resistance): path dependent, energy dissipated.</li>
+          </ul>
+        </li>
+        <li><strong>Velocity–Position–Energy link:</strong> Conservation laws allow solving for velocity without kinematics (e.g., pendulum, inclined plane).</li>
+        <li><strong>Power problems:</strong> Cars, elevators, power consumption are frequent applications.</li>
+      </ul>
+      <div class="ok">
+        <strong>Exam Checklist:</strong> Identify forces, check if conservative, write energy equations, apply work–energy theorem, and calculate power where needed.
+      </div>
+    </section>
+  </main>
+    <a href="https://e2yeong.github.io/Physics-Note/Physics2/Physics3/"><p class="Link">Back</p></a>
+  <a href="https://e2yeong.github.io/Physics-Note/Physics2/Physics3/Physics4/Physics5/"><p class="Link">Next</p></a>
+</body>
+</html>
