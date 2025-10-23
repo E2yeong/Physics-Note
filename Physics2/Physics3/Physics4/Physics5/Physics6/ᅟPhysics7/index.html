@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Harmonic Motion – Physics Study Guide</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f8f9fa; color: #222; }
+    header { background: #2c3e50; color: #fff; padding: 1.5rem 2rem; text-align: center; }
+    section { max-width: 950px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+    h3 { color: #34495e; margin-top: 1.4rem; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .formula { background: #eef7ff; border-left: 4px solid #3498db; padding: 0.7rem; margin: 1rem 0; font-family: monospace; }
+    .note { background: #fff3cd; border-left: 4px solid #ffcc00; padding: 0.7rem; margin: 1rem 0; border-radius: 6px; }
+    .example { background: #e8f8f5; border-left: 4px solid #1abc9c; padding: 0.7rem; margin: 1rem 0; }
+    .meta { font-size: 0.9rem; color: #555; margin-bottom: 1rem; font-style: italic; }
+    .Link { display: inline-block; margin-bottom: 1.5rem; padding: 0.6rem 1.2rem; background: #3498db; color: white; text-decoration: none; border-radius: 6px; margin-left: 50%; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem; text-align: left; }
+    th { background: #f6f8fa; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Simple Harmonic Motion (SHM)</h1>
+    <p>Understanding Restoring Force, Energy, and Oscillation</p>
+  </header>
+
+  <section>
+    <p class="meta">Posted on 2025.10.23</p>
+    <h2>1️⃣ What Is Simple Harmonic Motion?</h2>
+    <p><strong>Simple Harmonic Motion (SHM)</strong> is a type of periodic motion where an object moves back and forth about an equilibrium point.  
+    Examples include a mass on a spring or a swinging pendulum — always returning toward the center after being displaced.</p>
+    <p>The force that pulls it back to the center is called the <strong>restoring force</strong>.</p>
+    <div class="note">“When displaced, it tends to return — and overshoots — creating smooth, repeating motion.”</div>
+  </section>
+
+  <section>
+    <h2>2️⃣ Why “Harmonic”?</h2>
+    <p>The motion repeats smoothly over time.  
+    If you graph position versus time, you get a <strong>sine wave</strong> — a shape of perfect symmetry and rhythm.  
+    Just like musical harmony, this periodic, balanced motion inspired the name “harmonic.”</p>
+  </section>
+
+  <section>
+    <h2>3️⃣ Restoring Force and Hooke’s Law</h2>
+    <p>When the object moves away from the center, the restoring force increases, always directed back toward equilibrium.</p>
+    <div class="formula">F = -k · x</div>
+    <ul>
+      <li><strong>F:</strong> Restoring force</li>
+      <li><strong>k:</strong> Spring constant (stiffness)</li>
+      <li><strong>x:</strong> Displacement from equilibrium</li>
+    </ul>
+    <div class="note">The negative sign (–) means the force always points opposite to displacement.</div>
+  </section>
+
+  <section>
+    <h2>4️⃣ Acceleration and Angular Frequency</h2>
+    <p>Acceleration behaves the same way — directed toward the center, proportional to displacement:</p>
+    <div class="formula">a = -ω² · x</div>
+    <ul>
+      <li><strong>a:</strong> Acceleration</li>
+      <li><strong>ω (omega):</strong> Angular frequency — how quickly the motion oscillates</li>
+    </ul>
+    <p>The farther the object is displaced, the stronger the pullback.</p>
+  </section>
+
+  <section>
+    <h2>5️⃣ Period, Frequency, and Angular Frequency</h2>
+    <ul>
+      <li><strong>Period (T):</strong> Time for one complete cycle</li>
+      <li><strong>Frequency (f):</strong> Number of cycles per second → <code>f = 1 / T</code></li>
+      <li><strong>Angular frequency:</strong> <code>ω = 2πf = 2π / T</code></li>
+    </ul>
+    <p>It represents how quickly the system completes one 2π radian rotation.</p>
+  </section>
+
+  <section>
+    <h2>6️⃣ Spring–Mass System</h2>
+    <p>For a spring with stiffness <em>k</em> and a mass <em>m</em>, the period is:</p>
+    <div class="formula">T = 2π √(m / k)</div>
+    <ul>
+      <li>Heavier mass (↑m) → slower oscillation</li>
+      <li>Stiffer spring (↑k) → faster oscillation</li>
+    </ul>
+    <div class="note">“Heavier = slower; stiffer = faster.”</div>
+  </section>
+
+  <section>
+    <h2>7️⃣ Simple Pendulum</h2>
+    <p>A pendulum also undergoes SHM for small angles.  
+    The period depends on the length of the string:</p>
+    <div class="formula">T = 2π √(L / g)</div>
+    <ul>
+      <li><strong>L:</strong> Length of the string</li>
+      <li><strong>g:</strong> Gravitational acceleration</li>
+    </ul>
+    <p>Longer → slower; shorter → faster.  
+    The mass does not affect the period!</p>
+  </section>
+
+  <section>
+    <h2>8️⃣ Energy Transformation in SHM</h2>
+    <p>In SHM, energy continuously transforms between <strong>kinetic energy (KE)</strong> and <strong>potential energy (PE)</strong>, but total energy stays constant.</p>
+    <table>
+      <tr><th>Position</th><th>Kinetic Energy</th><th>Potential Energy</th></tr>
+      <tr><td>Center</td><td>Maximum</td><td>0</td></tr>
+      <tr><td>Endpoints</td><td>0</td><td>Maximum</td></tr>
+    </table>
+    <div class="note">At the center → fastest (max KE).  
+    At the extremes → momentarily still (max PE).  
+    Total energy remains constant.</div>
+  </section>
+
+  <section>
+    <h2>9️⃣ Real-World Examples</h2>
+    <ul>
+      <li><strong>Car Suspension:</strong> Springs oscillate to absorb shock.</li>
+      <li><strong>Speakers:</strong> Vibrating membranes produce sound waves.</li>
+      <li><strong>Clock Pendulum:</strong> Maintains precise periodic motion.</li>
+      <li><strong>Buildings:</strong> During earthquakes, restoring forces help maintain stability.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🔟 Key Summary</h2>
+    <ul>
+      <li>SHM is caused by a restoring force pulling back toward equilibrium.</li>
+      <li>Displacement (x), force (F), and acceleration (a) are proportional and opposite in direction.</li>
+      <li>Displacement, velocity, and acceleration are out of phase.</li>
+      <li>Energy alternates between kinetic and potential, but total energy is conserved.</li>
+      <li>Spring–mass and pendulum systems are classic SHM examples.</li>
+    </ul>
+  </section>
+
+  <a href="https://e2yeong.github.io/Physics-Note/Physics2/Physics3/Physics4/Physics5/Physics6/"><p class="Link">Back</p></a>
+  <a href="https://e2yeong.github.io/Physics-Note/Physics2/Physics3/Physics4/Physics5/Physics6/Physics7/Physics8/"><p class="Link">Next</p></a>
+
+</body>
+</html>
